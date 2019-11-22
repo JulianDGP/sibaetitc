@@ -91,7 +91,7 @@ Quit the server with CTRL-BREAK.
 2.1 generales
 (venv) C:\Users\DAVIDANDRESVALEROVAN\Desktop\Proyecto_SIBAETITC\sibaetitc>django-admin startapp generales
 2.2 beneficiarios
-(venv) C:\Users\DAVIDANDRESVALEROVAN\Desktop\Proyecto_SIBAETITC\sibaetitc>django-admin startapp clientes
+(venv) C:\Users\DAVIDANDRESVALEROVAN\Desktop\Proyecto_SIBAETITC\sibaetitc>django-admin startapp beneficiarios
 2.3 servicios
 (venv) C:\Users\DAVIDANDRESVALEROVAN\Desktop\Proyecto_SIBAETITC\sibaetitc>django-admin startapp servicios
 2.4 inscripciones
