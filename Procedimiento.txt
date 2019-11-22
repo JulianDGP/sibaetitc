@@ -1,0 +1,108 @@
+Pre-requisitos:
+Se debe tener instalado python 3.7, pip3, Virtualenv
+1. Creación del proyecto PyCharm, configuración del github y creación del proyecto Django
+1.1 Se crea un nuevo proyecto en PyCharm llamado Proyecto_SIBAETITC y se expande la pestaña Project interpreter: new virtual enviorement y en new environmentusing se selecciona Virtualenv.
+1.2 En github desktop creamos un nuevo repositorio llamado sibaetitc, descripción: Sistema de información para gestionar los servicios de alimentación del banco de alimentos de la Escuela Tecnológica Instituto Técnico Central, dentro del directorio Proyecto_SIBAETTIC seleccionando gitignore python. Se abre el .gitignore y se comenta la linea que dice db.sqlite3,luego se crea un archivo de texto llamado requirements.txt que contendrá:
+Django==2.2.7
+psycopg2==2.8.4
+pytz==2019.3
+sqlparse==0.3.0
+1.3 Se abre la pestaña ubicada en la parte inferior de PyCharm llamada Terminal y se instalan las librerías con el comando pip install -r requirements.txt
+(venv) C:\Users\DAVIDANDRESVALEROVAN\Desktop\Proyecto_SIBAETITC\sibaetitc>pip install -r requierements.txt
+Collecting Django==2.2.7 (from -r requierements.txt (line 1))
+  Using cached https://files.pythonhosted.org/packages/a0/36/463632a2e9161a7e713488d719a280e8cb0c7e3a66ed32a32e801891caae/Django-2.2.7-py3-none-any.whl
+Collecting psycopg2==2.8.4 (from -r requierements.txt (line 2))
+  Using cached https://files.pythonhosted.org/packages/1a/85/853f11abfccfd581b099e5ae5f2dd807cc2919745b13d14e565022fd821c/psycopg2-2.8.4-cp37-cp37m-win_amd64.whl
+Collecting pytz==2019.3 (from -r requierements.txt (line 3))
+  Using cached https://files.pythonhosted.org/packages/e7/f9/f0b53f88060247251bf481fa6ea62cd0d25bf1b11a87888e53ce5b7c8ad2/pytz-2019.3-py2.py3-none-any.whl
+Collecting sqlparse==0.3.0 (from -r requierements.txt (line 4))
+  Using cached https://files.pythonhosted.org/packages/ef/53/900f7d2a54557c6a37886585a91336520e5539e3ae2423ff1102daf4f3a7/sqlparse-0.3.0-py2.py3-none-any.whl
+Installing collected packages: sqlparse, pytz, Django, psycopg2
+Successfully installed Django-2.2.7 psycopg2-2.8.4 pytz-2019.3 sqlparse-0.3.0
+
+1.4 Se crea un nuevo proyecto Django con el comando django-admin startproject sibaetitc:
+(venv) C:\Users\DAVIDANDRESVALEROVAN\Desktop\Proyecto_SIBAETITC\sibaetitc>django-admin startproject sibaetitc
+
+1.5 La carpeta sibaetitc que contiene el archivo manage.py se debe mover a la altura del directorio venv dentro del directorio Proyecto_SIBAETITC
+(venv) C:\Users\DAVIDANDRESVALEROVAN\Desktop\Proyecto_SIBAETITC\sibaetitc>dir
+ El volumen de la unidad C no tiene etiqueta.
+ El número de serie del volumen es: 9EFB-A824
+
+ Directorio de C:\Users\DAVIDANDRESVALEROVAN\Desktop\Proyecto_SIBAETITC\sibaetitc
+
+22/11/2019  01:33 p. m.    <DIR>          .
+22/11/2019  01:33 p. m.    <DIR>          ..
+22/11/2019  01:30 p. m.                66 .gitattributes
+22/11/2019  01:30 p. m.             1.724 .gitignore
+22/11/2019  01:32 p. m.               650 manage.py
+22/11/2019  01:30 p. m.               160 README.md
+22/11/2019  01:33 p. m.    <DIR>          sibaetitc
+               4 archivos          2.600 bytes
+               3 dirs  69.246.545.920 bytes libres
+
+1.6 Se crea la primera migración: python manage.py migrate:
+(venv) C:\Users\DAVIDANDRESVALEROVAN\Desktop\Proyecto_SIBAETITC\sibaetitc>python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, sessions
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying sessions.0001_initial... OK
+
+1.7 Se crea la cuenta superuser:
+(venv) C:\Users\DAVIDANDRESVALEROVAN\Desktop\Proyecto_SIBAETITC\sibaetitc>python manage.py createsuperuser
+Username (leave blank to use 'davidandresvalerovan'): siba
+Email address: davalerov@itc.edu.co
+Password:
+Password (again):
+The password is too similar to the username.
+This password is too short. It must contain at least 8 characters.
+Bypass password validation and create user anyway? [y/N]: y
+Superuser created successfully.
+
+1.8 Se corre el servidorT:
+(venv) C:\Users\DAVIDANDRESVALEROVAN\Desktop\Proyecto_SIBAETITC\sibaetitc>python manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+November 22, 2019 - 13:42:49
+Django version 2.2.7, using settings 'sibaetitc.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+1.9 Se da clic en el enlace para abrir el navegador y visualizar el proyecto
+
+2. Se crean las apps
+2.1 generales
+(venv) C:\Users\DAVIDANDRESVALEROVAN\Desktop\Proyecto_SIBAETITC\sibaetitc>django-admin startapp generales
+2.2 beneficiarios
+(venv) C:\Users\DAVIDANDRESVALEROVAN\Desktop\Proyecto_SIBAETITC\sibaetitc>django-admin startapp clientes
+2.3 servicios
+(venv) C:\Users\DAVIDANDRESVALEROVAN\Desktop\Proyecto_SIBAETITC\sibaetitc>django-admin startapp servicios
+2.4 inscripciones
+(venv) C:\Users\DAVIDANDRESVALEROVAN\Desktop\Proyecto_SIBAETITC\sibaetitc>django-admin startapp inscripciones
+2.5 recargas
+(venv) C:\Users\DAVIDANDRESVALEROVAN\Desktop\Proyecto_SIBAETITC\sibaetitc>django-admin startapp recargas
+2.6 despachos
+(venv) C:\Users\DAVIDANDRESVALEROVAN\Desktop\Proyecto_SIBAETITC\sibaetitc>django-admin startapp despachos
+2.7 sanciones
+(venv) C:\Users\DAVIDANDRESVALEROVAN\Desktop\Proyecto_SIBAETITC\sibaetitc>django-admin startapp sanciones
+
+
+3. Adaptar plantilla web
+3.1 Se busca la plantilla SB Admin 2 y se descarga (https://github.com/BlackrockDigital/startbootstrap-sb-admin-2)(https://startbootstrap.com/themes/sb-admin-2/), se descomprime y se pega en la carpeta del proyecto a la altura del directorio venv
