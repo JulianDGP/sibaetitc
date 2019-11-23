@@ -1,13 +1,18 @@
 Pre-requisitos:
 Se debe tener instalado python 3.7, pip3, Virtualenv
 1. Creación del proyecto PyCharm, configuración del github y creación del proyecto Django
-1.1 Se crea un nuevo proyecto en PyCharm llamado Proyecto_SIBAETITC y se expande la pestaña Project interpreter: new virtual enviorement y en new environmentusing se selecciona Virtualenv.
-1.2 En github desktop creamos un nuevo repositorio llamado sibaetitc, descripción: Sistema de información para gestionar los servicios de alimentación del banco de alimentos de la Escuela Tecnológica Instituto Técnico Central, dentro del directorio Proyecto_SIBAETTIC seleccionando gitignore python. Se abre el .gitignore y se comenta la linea que dice db.sqlite3,luego se crea un archivo de texto llamado requirements.txt que contendrá:
+1.1 Se crea un nuevo proyecto en PyCharm llamado Proyecto_SIBAETITC y se expande la pestaña Project interpreter:
+new virtual enviorement y en new environmentusing se selecciona Virtualenv.
+1.2 En github desktop creamos un nuevo repositorio llamado sibaetitc, descripción: Sistema de información para gestionar
+los servicios de alimentación del banco de alimentos de la Escuela Tecnológica Instituto Técnico Central, dentro del
+directorio Proyecto_SIBAETTIC seleccionando gitignore python. Se abre el .gitignore y se comenta la linea que dice
+db.sqlite3,luego se crea un archivo de texto llamado requirements.txt que contendrá:
 Django==2.2.7
 psycopg2==2.8.4
 pytz==2019.3
 sqlparse==0.3.0
-1.3 Se abre la pestaña ubicada en la parte inferior de PyCharm llamada Terminal y se instalan las librerías con el comando pip install -r requirements.txt
+1.3 Se abre la pestaña ubicada en la parte inferior de PyCharm llamada Terminal y se instalan las librerías con el
+comando pip install -r requirements.txt
 (venv) C:\Users\DAVIDANDRESVALEROVAN\Desktop\Proyecto_SIBAETITC\sibaetitc>pip install -r requierements.txt
 Collecting Django==2.2.7 (from -r requierements.txt (line 1))
   Using cached https://files.pythonhosted.org/packages/a0/36/463632a2e9161a7e713488d719a280e8cb0c7e3a66ed32a32e801891caae/Django-2.2.7-py3-none-any.whl
@@ -23,7 +28,8 @@ Successfully installed Django-2.2.7 psycopg2-2.8.4 pytz-2019.3 sqlparse-0.3.0
 1.4 Se crea un nuevo proyecto Django con el comando django-admin startproject sibaetitc:
 (venv) C:\Users\DAVIDANDRESVALEROVAN\Desktop\Proyecto_SIBAETITC\sibaetitc>django-admin startproject sibaetitc
 
-1.5 La carpeta sibaetitc que contiene el archivo manage.py se debe mover a la altura del directorio venv dentro del directorio Proyecto_SIBAETITC
+1.5 La carpeta sibaetitc que contiene el archivo manage.py se debe mover a la altura del directorio venv dentro del
+directorio Proyecto_SIBAETITC
 (venv) C:\Users\DAVIDANDRESVALEROVAN\Desktop\Proyecto_SIBAETITC\sibaetitc>dir
  El volumen de la unidad C no tiene etiqueta.
  El número de serie del volumen es: 9EFB-A824
@@ -105,4 +111,90 @@ Quit the server with CTRL-BREAK.
 
 
 3. Adaptar plantilla web
-3.1 Se busca la plantilla SB Admin 2 y se descarga (https://github.com/BlackrockDigital/startbootstrap-sb-admin-2)(https://startbootstrap.com/themes/sb-admin-2/), se descomprime y se pega en la carpeta del proyecto a la altura del directorio venv
+3.1 Se busca la plantilla SB Admin 2 y se descarga (https://github.com/BlackrockDigital/startbootstrap-sb-admin-2)
+(https://startbootstrap.com/themes/sb-admin-2/), se descomprime y se pega en la carpeta del proyecto a la altura del
+directorio venv
+4. Registrar los templates en el archivo settings.py en la variable TEMPLATES:
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+
+5. Se crea un directorio llamado templates a la altura de manage.py y dentro crea otro directorio llamado base deonde va
+a estar la plantilla general. Y luego dentro de cada app se crea un directorio templates y dentro otro llamado de igual
+forma que la app a la que pertenece
+
+C:\USERS\DAVIDANDRESVALEROVAN\DESKTOP\PROYECTOSIBAETITC\SIBAETITC
+├───beneficiarios
+│   ├───migrations
+│   └───templates
+│       └───beneficiarios
+├───despachos
+│   ├───migrations
+│   └───templates
+│       └───despachos
+├───generales
+│   ├───migrations
+│   └───templates
+│       └───generales
+├───inscripciones
+│   ├───migrations
+│   └───templates
+│       └───inscripciones
+├───plantilla-sb-admin-2
+│   ├───css
+│   ├───img
+│   ├───js
+│   │   └───demo
+│   ├───scss
+│   │   ├───navs
+│   │   └───utilities
+│   └───vendor
+│       ├───bootstrap
+│       │   ├───js
+│       │   └───scss
+│       │       ├───mixins
+│       │       ├───utilities
+│       │       └───vendor
+│       ├───chart.js
+│       ├───datatables
+│       ├───fontawesome-free
+│       │   ├───css
+│       │   ├───js
+│       │   ├───less
+│       │   ├───scss
+│       │   ├───sprites
+│       │   ├───svgs
+│       │   │   ├───brands
+│       │   │   ├───regular
+│       │   │   └───solid
+│       │   └───webfonts
+│       ├───jquery
+│       └───jquery-easing
+├───recargas
+│   ├───migrations
+│   └───templates
+│       └───recargas
+├───sanciones
+│   ├───migrations
+│   └───templates
+│       └───sanciones
+├───servicios
+│   ├───migrations
+│   └───templates
+│       └───servicios
+├───sibaetitc
+│   └───__pycache__
+└───templates
+    └───base
