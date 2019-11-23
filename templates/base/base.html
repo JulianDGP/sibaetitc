@@ -48,9 +48,9 @@
 
         <!-- Nav Item - Dashboard -->
         <li class="nav-item">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="admin">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>Dashboard</span></a>
+                <span>Iniciar sesión</span></a>
         </li>
 
         <!-- Divider -->
@@ -142,13 +142,13 @@
             <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseDespachos" aria-expanded="true"
                aria-controls="collapseDespachos">
                 <i class="fas fa-fw fa-folder"></i>
-                <span>Despachos</span>
+                <span>Despachar</span>
             </a>
             <div id="collapseDespachos" class="collapse show" aria-labelledby="headingPages"
                  data-parent="#accordionSidebar">
                 <div class="dropdown mb-4">
                     <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Servicios
+                      Servicio
                     </button>
                     <div class="dropdown-menu animated--fade-in" aria-labelledby="dropdownMenuButton" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
                       <a class="dropdown-item" href="#">Almuerzo</a>
@@ -382,8 +382,8 @@
                     <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
-                            <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ user.username.title }}</span>
+                            <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJdcbgJk/60x60">
                         </a>
                         <!-- Dropdown - User Information -->
                         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -401,7 +401,7 @@
                                 Activity Log
                             </a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                            <a class="dropdown-item" href="{{BASE_DIR}}/admin/logout/" data-toggle="modal" data-target="#logoutModal">
                                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Logout
                             </a>
