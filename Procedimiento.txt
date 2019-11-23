@@ -406,3 +406,43 @@ class Home(generic.TemplateView):
     template_name = 'generales/home.html'
 
 12.4 Cambiando el título de:
+
+12.4.1 Archivo base.html
+
+    <title>SB Admin 2 - Blank</title>
+    por:
+
+    <title>
+        {% block titulo_pagina %}
+            Título
+        {% endblock titulo_pagina %}
+    </title>
+
+12.4.2 Archivo home.html:
+se agrega:
+
+{% block titulo_pagina %}
+    Inicio
+{% endblock titulo_pagina %}
+
+13. Tag URL en las plantillas:
+Cambiamos esto:
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+Por esto:
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{% url 'generales:home' %}">
+
+y esto:
+    <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+por esto:
+    <div class="sidebar-brand-text mx-3">SIBAETITC<sup></sup></div>
+
+
+
+14. Nuevas apps
+
+14.1 Se crea la app
+
+14.2 Se registra en urls principal:
+
+Se crea el archivo urls dentro de la app
+
