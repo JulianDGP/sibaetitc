@@ -261,7 +261,7 @@ Luego cambiamos la segunda lílea donde dice 'en' por 'es'
 7. Static files:
 Se crea un directorio a la altura del manage.py llamado static
 Dentro creamos otro llamado base
-Dentro creamos otros llamados css, fonts, img, js
+Dentro creamos otros llamados css, img, js, webfonts
 
 Luego se modifica el archivo settings.py:
 STATIC_URL = '/static/'
@@ -355,4 +355,31 @@ Starting development server at http://127.0.0.1:8000/
 Quit the server with CTRL-BREAK.
 
 Se aprecia que la página abierta muestra un mensaje: Página de inicio
+
+11. Modificación del Home con plantilla:
+
+11.1 Se abre el archivo views de la app generales y se modifica:
+
+from django.shortcuts import render
+from django.views import generic
+from django.http import HttpResponse
+
+
+class HomePage(generic.View):
+    def get(self, request, *args, **kwargs):
+        return HttpResponse('Página de inicio')
+
+class Home(generic.TemplateView):
+    template_name = 'base/base.html'
+
+11.2 Se corre el servidor y ya debe aparecer la plantilla en el navegador
+11.3 Se presiona F12 desde Chrome para acceder a las herramientas de desarrollo y verificar los errores:
+
+﻿
+Failed to load resource: the server responded with a status of 404 (Not Found)                      fa-solid-900.woff2:1
+Failed to load resource: the server responded with a status of 404 (Not Found)                      fa-solid-900.woff:1
+Failed to load resource: the server responded with a status of 404 (Not Found)                      fa-solid-900.ttf:1
+
+Al colocar el mouse encima del enlace al final de cada línea se aprecia la ruta en la que debe estar y que son fonts,
+por lo cual vamos al directorio vendor\fontawesome-free\webfonts y copiamos los archivos en la carpeta base/webfonts
 

@@ -3,6 +3,10 @@ from django.views import generic
 from django.http import HttpResponse
 
 
-class Home(generic.View):
+class HomePage(generic.View):
     def get(self, request, *args, **kwargs):
         return HttpResponse('Página de inicio')
+
+class Home(generic.TemplateView):
+    template_name = 'base/base.html'
+
