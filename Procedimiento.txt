@@ -270,3 +270,89 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 Para que Django sea capaz cualquier parte del proyecto carpetas llamadas static
 
+8. Copiamos archivos necesarios de la plantilla descargada a nuestro proyecto y reemplazamos las rutas en el archivo base.html:
+ <!-- Custom fonts for this template-->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+  <link href="{% static 'base/css/all.min.css' %}" rel="stylesheet" type="text/css">
+
+Finalmente para cargar los archivos estáticos, se agrega una línea al inicio del archivo base.html con la siguiente línea:
+{% load static %}
+
+{% %} -> ejecuta lo que está entre los %
+{{ }} -> imprime en pantalla lo que esté entre las llaves
+
+9. Agregamos las apps creadas al archivo settings.py:
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'generales',
+    'beneficiarios',
+    'servicios',
+    'inscripciones',
+    'recargas',
+    'despachos',
+    'sanciones',
+]
+
+10. Creación del home
+
+En urls de la carpeta sibaetitc registramos la app generales y su archivo urls:
+
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('', include(('generales.urls','generales'), namespace='generales')),
+    path('admin/', admin.site.urls),
+]
+
+Creamos un archivo llamado urls.py dentro del directorio generales:
+
+from django.urls import include, path
+from .views import Home
+
+urlpatterns = [
+    path('', Home.as_view(),name='home'),
+]
+
+Modificamos el archivo urls del proyecto:
+
+"""sibaetitc URL Configuration
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/2.2/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+from django.contrib import admin
+from django.urls import path
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('', include(('generales.urls','generales'), namespace='generales')),
+    path('admin/', admin.site.urls),
+]
+
+Corremos el proyecto para comprobar:
+System check identified no issues (0 silenced).
+November 22, 2019 - 21:34:54
+Django version 2.2.7, using settings 'sibaetitc.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+Se aprecia que la página abierta muestra un mensaje: Página de inicio
+
