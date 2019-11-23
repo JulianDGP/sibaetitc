@@ -133,68 +133,140 @@ TEMPLATES = [
 
 5. Se crea un directorio llamado templates a la altura de manage.py y dentro crea otro directorio llamado base deonde va
 a estar la plantilla general. Y luego dentro de cada app se crea un directorio templates y dentro otro llamado de igual
-forma que la app a la que pertenece
+forma que la app a la que pertenece:
 
+C:\Users\DAVIDANDRESVALEROVAN\Desktop\ProyectoSIBAETITC
+λ tree sibaetitc /F
+Listado de rutas de carpetas
+El número de serie del volumen es 9EFB-A824
 C:\USERS\DAVIDANDRESVALEROVAN\DESKTOP\PROYECTOSIBAETITC\SIBAETITC
+│   .gitattributes
+│   .gitignore
+│   db.sqlite3
+│   manage.py
+│   Procedimiento.txt
+│   README.md
+│   requirements.txt
+│
 ├───beneficiarios
+│   │   admin.py
+│   │   apps.py
+│   │   models.py
+│   │   tests.py
+│   │   views.py
+│   │   __init__.py
+│   │
 │   ├───migrations
+│   │       __init__.py
+│   │
 │   └───templates
 │       └───beneficiarios
 ├───despachos
+│   │   admin.py
+│   │   apps.py
+│   │   models.py
+│   │   tests.py
+│   │   views.py
+│   │   __init__.py
+│   │
 │   ├───migrations
+│   │       __init__.py
+│   │
 │   └───templates
 │       └───despachos
 ├───generales
+│   │   admin.py
+│   │   apps.py
+│   │   models.py
+│   │   tests.py
+│   │   views.py
+│   │   __init__.py
+│   │
 │   ├───migrations
+│   │       __init__.py
+│   │
 │   └───templates
 │       └───generales
 ├───inscripciones
+│   │   admin.py
+│   │   apps.py
+│   │   models.py
+│   │   tests.py
+│   │   views.py
+│   │   __init__.py
+│   │
 │   ├───migrations
+│   │       __init__.py
+│   │
 │   └───templates
 │       └───inscripciones
-├───plantilla-sb-admin-2
-│   ├───css
-│   ├───img
-│   ├───js
-│   │   └───demo
-│   ├───scss
-│   │   ├───navs
-│   │   └───utilities
-│   └───vendor
-│       ├───bootstrap
-│       │   ├───js
-│       │   └───scss
-│       │       ├───mixins
-│       │       ├───utilities
-│       │       └───vendor
-│       ├───chart.js
-│       ├───datatables
-│       ├───fontawesome-free
-│       │   ├───css
-│       │   ├───js
-│       │   ├───less
-│       │   ├───scss
-│       │   ├───sprites
-│       │   ├───svgs
-│       │   │   ├───brands
-│       │   │   ├───regular
-│       │   │   └───solid
-│       │   └───webfonts
-│       ├───jquery
-│       └───jquery-easing
 ├───recargas
+│   │   admin.py
+│   │   apps.py
+│   │   models.py
+│   │   tests.py
+│   │   views.py
+│   │   __init__.py
+│   │
 │   ├───migrations
+│   │       __init__.py
+│   │
 │   └───templates
 │       └───recargas
 ├───sanciones
+│   │   admin.py
+│   │   apps.py
+│   │   models.py
+│   │   tests.py
+│   │   views.py
+│   │   __init__.py
+│   │
 │   ├───migrations
+│   │       __init__.py
+│   │
 │   └───templates
 │       └───sanciones
 ├───servicios
+│   │   admin.py
+│   │   apps.py
+│   │   models.py
+│   │   tests.py
+│   │   views.py
+│   │   __init__.py
+│   │
 │   ├───migrations
+│   │       __init__.py
+│   │
 │   └───templates
 │       └───servicios
 ├───sibaetitc
+│   │   settings.py
+│   │   urls.py
+│   │   wsgi.py
+│   │   __init__.py
+│   │
 │   └───__pycache__
+│           settings.cpython-37.pyc
+│           urls.cpython-37.pyc
+│           wsgi.cpython-37.pyc
+│           __init__.cpython-37.pyc
+│
 └───templates
     └───base
+
+6. Se crea un archivo en el directorio base que está dentro del directorio templates, y lo llamamos 'base.html'
+Allí pegamos el código del archivo blank.html de la plantilla descargada.
+Luego cambiamos la segunda lílea donde dice 'en' por 'es'
+
+7. Static files:
+Se crea un directorio a la altura del manage.py llamado static
+Dentro creamos otro llamado base
+Dentro creamos otros llamados css, fonts, img, js
+
+Luego se modifica el archivo settings.py:
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+
+Para que Django sea capaz cualquier parte del proyecto carpetas llamadas static
+
