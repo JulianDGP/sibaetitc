@@ -8,5 +8,5 @@ class HomePage(generic.View):
         return HttpResponse('Página de inicio')
 
 class Home(generic.TemplateView):
-    template_name = 'base/base.html'
+    template_name = 'generales/home.html'
 

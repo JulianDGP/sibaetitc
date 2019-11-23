@@ -1,0 +1,210 @@
+C:\Users\DAVIDANDRESVALEROVAN\Desktop\ProyectoSIBAETITC
+λ tree sibaetitc /F
+Listado de rutas de carpetas
+El número de serie del volumen es 9EFB-A824
+C:\USERS\DAVIDANDRESVALEROVAN\DESKTOP\PROYECTOSIBAETITC\SIBAETITC
+│   .gitattributes
+│   .gitignore
+│   db.sqlite3
+│   manage.py
+│   Procedimiento.txt
+│   README.md
+│   requirements.txt
+│
+├───beneficiarios
+│   │   admin.py
+│   │   apps.py
+│   │   models.py
+│   │   tests.py
+│   │   views.py
+│   │   __init__.py
+│   │
+│   ├───migrations
+│   │   │   __init__.py
+│   │   │
+│   │   └───__pycache__
+│   │           __init__.cpython-37.pyc
+│   │
+│   ├───templates
+│   │   └───beneficiarios
+│   └───__pycache__
+│           admin.cpython-37.pyc
+│           models.cpython-37.pyc
+│           __init__.cpython-37.pyc
+│
+├───despachos
+│   │   admin.py
+│   │   apps.py
+│   │   models.py
+│   │   tests.py
+│   │   views.py
+│   │   __init__.py
+│   │
+│   ├───migrations
+│   │   │   __init__.py
+│   │   │
+│   │   └───__pycache__
+│   │           __init__.cpython-37.pyc
+│   │
+│   ├───templates
+│   │   └───despachos
+│   └───__pycache__
+│           admin.cpython-37.pyc
+│           models.cpython-37.pyc
+│           __init__.cpython-37.pyc
+│
+├───generales
+│   │   admin.py
+│   │   apps.py
+│   │   models.py
+│   │   tests.py
+│   │   urls.py
+│   │   views.py
+│   │   __init__.py
+│   │
+│   ├───migrations
+│   │   │   __init__.py
+│   │   │
+│   │   └───__pycache__
+│   │           __init__.cpython-37.pyc
+│   │
+│   ├───templates
+│   │   └───generales
+│   │           home.html
+│   │
+│   └───__pycache__
+│           admin.cpython-37.pyc
+│           models.cpython-37.pyc
+│           urls.cpython-37.pyc
+│           views.cpython-37.pyc
+│           __init__.cpython-37.pyc
+│
+├───inscripciones
+│   │   admin.py
+│   │   apps.py
+│   │   models.py
+│   │   tests.py
+│   │   views.py
+│   │   __init__.py
+│   │
+│   ├───migrations
+│   │   │   __init__.py
+│   │   │
+│   │   └───__pycache__
+│   │           __init__.cpython-37.pyc
+│   │
+│   ├───templates
+│   │   └───inscripciones
+│   └───__pycache__
+│           admin.cpython-37.pyc
+│           models.cpython-37.pyc
+│           __init__.cpython-37.pyc
+│
+├───recargas
+│   │   admin.py
+│   │   apps.py
+│   │   models.py
+│   │   tests.py
+│   │   views.py
+│   │   __init__.py
+│   │
+│   ├───migrations
+│   │   │   __init__.py
+│   │   │
+│   │   └───__pycache__
+│   │           __init__.cpython-37.pyc
+│   │
+│   ├───templates
+│   │   └───recargas
+│   └───__pycache__
+│           admin.cpython-37.pyc
+│           models.cpython-37.pyc
+│           __init__.cpython-37.pyc
+│
+├───sanciones
+│   │   admin.py
+│   │   apps.py
+│   │   models.py
+│   │   tests.py
+│   │   views.py
+│   │   __init__.py
+│   │
+│   ├───migrations
+│   │   │   __init__.py
+│   │   │
+│   │   └───__pycache__
+│   │           __init__.cpython-37.pyc
+│   │
+│   ├───templates
+│   │   └───sanciones
+│   └───__pycache__
+│           admin.cpython-37.pyc
+│           models.cpython-37.pyc
+│           __init__.cpython-37.pyc
+│
+├───servicios
+│   │   admin.py
+│   │   apps.py
+│   │   models.py
+│   │   tests.py
+│   │   views.py
+│   │   __init__.py
+│   │
+│   ├───migrations
+│   │   │   __init__.py
+│   │   │
+│   │   └───__pycache__
+│   │           __init__.cpython-37.pyc
+│   │
+│   ├───templates
+│   │   └───servicios
+│   └───__pycache__
+│           admin.cpython-37.pyc
+│           models.cpython-37.pyc
+│           __init__.cpython-37.pyc
+│
+├───sibaetitc
+│   │   settings.py
+│   │   urls.py
+│   │   wsgi.py
+│   │   __init__.py
+│   │
+│   └───__pycache__
+│           settings.cpython-37.pyc
+│           urls.cpython-37.pyc
+│           wsgi.cpython-37.pyc
+│           __init__.cpython-37.pyc
+│
+├───static
+│   └───base
+│       ├───css
+│       │       all.min.css
+│       │       sb-admin-2.min.css
+│       │
+│       ├───img
+│       ├───js
+│       │       bootstrap.bundle.min.js
+│       │       jquery.easing.min.js
+│       │       jquery.min.js
+│       │       sb-admin-2.min.js
+│       │
+│       └───webfonts
+│               fa-brands-400.eot
+│               fa-brands-400.svg
+│               fa-brands-400.ttf
+│               fa-brands-400.woff
+│               fa-brands-400.woff2
+│               fa-regular-400.eot
+│               fa-regular-400.svg
+│               fa-regular-400.ttf
+│               fa-regular-400.woff
+│               fa-regular-400.woff2
+│               fa-solid-900.eot
+│               fa-solid-900.svg
+│               fa-solid-900.ttf
+│               fa-solid-900.woff
+│               fa-solid-900.woff2
+│
+└───templates
+    └───base
+            base.html
