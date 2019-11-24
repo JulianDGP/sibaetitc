@@ -470,7 +470,7 @@ por:
 
 Y por último se agrega la ruta de media:
 
-MEDIA_ROOT = BASE_DIR.child('media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 Se realizan las migraciones:
 python manage.py makemigrations beneficiarios

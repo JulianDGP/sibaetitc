@@ -24,4 +24,4 @@ class DependenciaAdmin(admin.ModelAdmin):
 class BeneficiarioAdmin(admin.ModelAdmin):
     list_display = ('id_rfid_beneficiario', 'documento_identidad', 'numero_documento_identidad_beneficiario', 'nombres_beneficiario',
                     'apellidos_beneficiario', 'email_beneficiario', 'fecha_nacimiento_beneficiario', 'saldo_beneficiario', 'genero_beneficiario',
-                    'tipo_beneficiario', 'dependencia_beneficiario')
+                    'tipo_beneficiario', 'dependencia_beneficiario', 'foto_beneficiario')

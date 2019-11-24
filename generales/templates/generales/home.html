@@ -1,9 +1,10 @@
 {% extends 'base/base.html' %}
-
+{% load static %}
 {% block titulo_pagina %}
     Inicio
 {% endblock titulo_pagina %}
 
 {% block contenido %}
 <h1>Bienvenidos a SIBAETITC</h1>
+<img class="img-profile rounded-circle" src="{% static 'beneficiarios/1.jpg' %}">
 {% endblock contenido %}

@@ -1,5 +1,4 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -71,11 +70,11 @@
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Datos Beneficiario:</h6>
-                    <a class="collapse-item" href="buttons.html">Género</a>
-                    <a class="collapse-item" href="cards.html">Documento</a>
-                    <a class="collapse-item" href="cards.html">Tipo beneficiario</a>
-                    <a class="collapse-item" href="cards.html">Dependencia</a>
-                    <a class="collapse-item" href="cards.html">Beneficiario</a>
+                    <a class="collapse-item" href="admin/beneficiarios/genero/">Género</a>
+                    <a class="collapse-item" href="admin/beneficiarios/documento_identidad/">Documento</a>
+                    <a class="collapse-item" href="admin/beneficiarios/tipo_beneficiario/">Tipo beneficiario</a>
+                    <a class="collapse-item" href="admin/beneficiarios/dependencia/">Dependencia</a>
+                    <a class="collapse-item" href="admin/beneficiarios/beneficiario/">Beneficiario</a>
                 </div>
             </div>
         </li>
@@ -382,13 +381,15 @@
                     <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ user.username.title }}</span>
-                            <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJdcbgJk/60x60">
+                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ user.username.title.upper }}</span>
+                            {% if user.is_authenticated %}
+                            <img class="img-profile rounded-circle" src="https://instagram.fbog3-1.fna.fbcdn.net/v/t51.2885-15/e35/27890976_151032658892384_5189886777946537984_n.jpg?_nc_ht=instagram.fbog3-1.fna.fbcdn.net&_nc_cat=108&oh=f874227c64f218c8fef4399957c47ba5&oe=5E87EC0F">
+                            {% endif %}
                         </a>
                         <!-- Dropdown - User Information -->
                         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                              aria-labelledby="userDropdown">
-                            <a class="dropdown-item" href="#">
+                            <a class="dropdown-item" href="admin/beneficiarios/beneficiario/{{ user.id }}/change/">
                                 <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Profile
                             </a>
@@ -401,7 +402,7 @@
                                 Activity Log
                             </a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{BASE_DIR}}/admin/logout/" data-toggle="modal" data-target="#logoutModal">
+                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Logout
                             </a>
@@ -462,8 +463,8 @@
             </div>
             <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
             <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="login.html">Logout</a>
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                <a class="btn btn-primary" href="admin/logout/">Logout</a>
             </div>
         </div>
     </div>
