@@ -446,3 +446,34 @@ por esto:
 
 Se crea el archivo urls dentro de la app
 
+15. Archivos imágenes:
+pip install pillow
+
+Se abre settings.py y se agrega:
+
+MEDIA_URL = '/media/'
+
+Se instala unipath
+
+pip install unipath
+
+Ahora en el archivo settings importamos la librería unipath:
+    from unipath import Path
+
+Luego cambiamos:
+
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+por:
+
+    BASE_DIR = Path(__file__).ancestor(2)
+
+Y por último se agrega la ruta de media:
+
+MEDIA_ROOT = BASE_DIR.child('media')
+
+Se realizan las migraciones:
+python manage.py makemigrations beneficiarios
+
+python manage.py migrate beneficiarios
+
