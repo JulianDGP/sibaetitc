@@ -26,7 +26,7 @@
 
 </head>
 
-<body id="page-top">
+<body id="page-top" class="bg-gradient-primary">
     {% block side_bar %}
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -70,11 +70,11 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Datos Beneficiario:</h6>
-                        <a class="collapse-item" href="admin/beneficiarios/genero/">Género</a>
-                        <a class="collapse-item" href="admin/beneficiarios/documento_identidad/">Documento</a>
-                        <a class="collapse-item" href="admin/beneficiarios/tipo_beneficiario/">Tipo beneficiario</a>
-                        <a class="collapse-item" href="admin/beneficiarios/dependencia/">Dependencia</a>
-                        <a class="collapse-item" href="admin/beneficiarios/beneficiario/">Beneficiario</a>
+                        <a class="collapse-item" href="{% url 'beneficiarios:genero_list' %}">Género</a>
+                        <a class="collapse-item" href="admin/beneficiarios/documento_identidad">Documento</a>
+                        <a class="collapse-item" href="admin/beneficiarios/tipo_beneficiario">Tipo beneficiario</a>
+                        <a class="collapse-item" href="admin/beneficiarios/dependencia">Dependencia</a>
+                        <a class="collapse-item" href="admin/beneficiarios/beneficiario">Beneficiario</a>
                     </div>
                 </div>
             </li>
@@ -448,7 +448,7 @@
 
     </div>
     <!-- End of Page Wrapper -->
-    {% block loging %} {% endblock loging %}
+    {% block login %} {% endblock login %}
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
@@ -470,7 +470,7 @@
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-                    <a class="btn btn-primary" href="admin/logout/">Cerrar sesión</a>
+                    <a class="btn btn-primary" href="{% url 'generales:logout' %}">Cerrar sesión</a>
                 </div>
             </div>
         </div>
