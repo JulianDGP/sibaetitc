@@ -180,7 +180,7 @@ class Beneficiario(Modelo):
         self.id_rfid_beneficiario = self.id_rfid_beneficiario.upper()
         self.nombres_beneficiario = self.nombres_beneficiario.upper()
         self.apellidos_beneficiario = self.apellidos_beneficiario.upper()
-        self.foto_beneficiario.name = '{}_{}.jpg'.format(self.id_beneficiario,self.creado)
+        self.foto_beneficiario.name = '{}_{}.jpg'.format(self.id_beneficiario,self.modificado)
         super(Beneficiario, self).save()
 
     def __str__(self):
