@@ -17,15 +17,24 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.contrib import admin
-from django.urls import path, include, re_path
+from django.urls import path, include
 from django.conf.urls.static import static
 
 
 urlpatterns = [
     path('', include(('generales.urls','generales'), namespace='generales')),
     path('beneficiarios/', include(('beneficiarios.urls','beneficiarios'), namespace='beneficiarios')),
-    path('admin/', admin.site.urls)
+
+
+    path('admin/', admin.site.urls),
 ]
+
+
+'''path('servicios/', include(('servicios.urls','servicios'), namespace='servicios')),
+    path('inscripciones/', include(('inscripciones.urls','inscripciones'), namespace='inscripciones')),
+    path('recargas/', include(('recargas.urls','recargas'), namespace='recargas')),
+    path('despachos/', include(('despachos.urls','despachos'), namespace='despachos')),
+    path('sanciones/', include(('sanciones.urls','sanciones'), namespace='sanciones')),'''
 if settings.DEBUG:
     urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

@@ -43,15 +43,18 @@
             </a>
 
             <!-- Divider -->
+
+                    {% if user.is_staff %}
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
                 <a class="nav-link" href="admin">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Iniciar sesión</span></a>
-            </li>
+                    <span>Admin</span></a>
 
+            </li>
+            {% endif %}
             <!-- Divider -->
             <hr class="sidebar-divider">
 
