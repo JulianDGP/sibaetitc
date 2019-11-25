@@ -24,6 +24,9 @@
     <!-- Custom styles for this template-->
     <link href="{% static 'base/css/sb-admin-2.min.css' %}" rel="stylesheet">
 
+    <!-- Custom styles for this page -->
+    <link href="{% static 'base/vendor/datatables/dataTables.bootstrap4.min.css' %}" rel="stylesheet">
+
 </head>
 
 <body id="page-top" class="bg-gradient-primary">
@@ -386,7 +389,7 @@
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ user.username.title|lower }}</span>
                                 {% if user.is_authenticated %}
                                 <img class="img-profile rounded-circle"
-                                     src="https://instagram.fbog3-1.fna.fbcdn.net/v/t51.2885-15/e35/27890976_151032658892384_5189886777946537984_n.jpg?_nc_ht=instagram.fbog3-1.fna.fbcdn.net&_nc_cat=108&oh=f874227c64f218c8fef4399957c47ba5&oe=5E87EC0F">
+                                     src="{% static 'base/img/user.png' %}">
                                 {% endif %}
                             </a>
                             <!-- Dropdown - User Information -->
@@ -488,6 +491,10 @@
 
     <!-- Custom scripts for all pages-->
     <script src="{% static 'base/js/sb-admin-2.min.js' %}"></script>
+
+    <!-- Page level plugins -->
+  <script src="{% static 'base/vendor/datatables/jquery.dataTables.min.js' %}"></script>
+  <script src="{% static 'base/vendor/datatables/dataTables.bootstrap4.min.js' %}"></script>
 
     {% block js_page %} {% endblock %}
 

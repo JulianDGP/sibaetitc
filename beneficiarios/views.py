@@ -25,6 +25,7 @@ class GeneroNew(LoginRequiredMixin, generic.CreateView):
     login_url = 'generales:login'
 
     def form_valid(self, form):
+        form.instance.uc = self.request.user
         return super().form_valid(form)
 
 class GeneroEdit(LoginRequiredMixin, generic.UpdateView):
@@ -36,4 +37,11 @@ class GeneroEdit(LoginRequiredMixin, generic.UpdateView):
     login_url = 'generales:login'
 
     def form_valid(self, form):
+        form.instance.um = self.request.user.id
         return super().form_valid(form)
+
+class GeneroDel(LoginRequiredMixin, generic.DeleteView):
+    model = Genero
+    template_name = 'beneficiarios/genero_del.html'
+    context_object_name = 'obj'
+    success_url = reverse_lazy('beneficiarios:genero_list')

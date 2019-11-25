@@ -21,9 +21,16 @@
                                     <div class="input-group">
                                         <input type="text" name="nombre_genero" maxlength="100" class="form-control"
                                                required id="id_genero" placeholder="Nombre del género"
-                                               value="{% if obj %} {{ obj.descripcion }} {% endif %}">
+                                               value="{% if obj %}{{ obj.nombre_genero }}{% endif %}">
                                     </div>
                                 </div>
+                                <div class="col-2">
+                                <div class="form-group">
+                                <label for="id_estado">Estado</label>
+                                <input type="checkbox" name="estado" class="form-control" id="id_estado"
+                                {% if obj.estado %} checked {% endif %} >
+                            </div>
+                        </div>
 
                                 <!-- {{ form.as_p }} -->
                             </div>

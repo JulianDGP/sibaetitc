@@ -6,8 +6,8 @@ from .models import *
 class GeneroForm(forms.ModelForm):
     class Meta:
         model=Genero
-        fields = ['nombre_genero']
-        labels = {'nombre_genero':"Nombre del género",}
+        fields = ['nombre_genero','estado']
+        labels = {'nombre_genero':"Nombre del género","estado":"Estado"}
         widget={'nombre_genero': forms.TextInput}
 
     def __init__(self, *args, **kwargs):
