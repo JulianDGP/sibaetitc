@@ -2,6 +2,7 @@ import os
 # Create your models here.
 from django.db import models
 from generales.models import Modelo
+from datetime import datetime
 
 
 class Servicio( Modelo ):
@@ -11,23 +12,23 @@ class Servicio( Modelo ):
 
     nombre_servicio = models.CharField(
         max_length=45,
-        help_text='Nombre del servicio',
+        #help_text='Nombre del servicio',
         unique=True,
         verbose_name='Nombre servicio'
     )
 
     hora_inicio_servicio = models.TimeField(
-        help_text='Hora de inicio',
+        #help_text='Hora de inicio',
         verbose_name='Hora inicio'
     )
 
     hora_fin_servicio = models.TimeField(
-        help_text='Hora de fin',
+        #help_text='Hora de fin',
         verbose_name='Hora fin'
     )
 
     valor_servicio = models.PositiveIntegerField(
-        help_text='Valor del servicio',
+        #help_text='Valor del servicio',
         verbose_name='Valor servicio'
     )
 
@@ -80,6 +81,7 @@ class Servicio( Modelo ):
     class Meta:
         verbose_name = 'Servicio'
         verbose_name_plural = 'Servicios'
+########################################################################################################################
 
 class Habilitacion_servicio( Modelo ):
     id_habilitacion_servicio = models.AutoField(
@@ -95,7 +97,9 @@ class Habilitacion_servicio( Modelo ):
 
     fecha_habilitacion_servicio = models.DateField(
         help_text='Fecha en que se habilita prestar un servicio',
-        verbose_name='Fecha habilitación servicio'
+        verbose_name='Fecha habilitación servicio',
+        default=datetime.now()
+
     )
 
     habilitado_habilitacion_servicio = models.BooleanField(
@@ -104,12 +108,9 @@ class Habilitacion_servicio( Modelo ):
     )
 
     def __str__(self):
-        return '{}:{}'.format( self.servicio_habilitacion_servicio,self.fecha_habilitacion_servicio)
+        return '{} {}'.format( self.servicio_habilitacion_servicio,self.fecha_habilitacion_servicio)
 
-    def save(self):
-        self.nombre_servicio = self.nombre_servicio.upper()
-        super( Servicio, self ).save()
 
     class Meta:
-        verbose_name = 'Servicio'
-        verbose_name_plural = 'Servicios'
+        verbose_name = 'Habilitación Servicio'
+        verbose_name_plural = 'Habilitación Servicios'

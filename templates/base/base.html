@@ -96,8 +96,8 @@
             <div id="collapseServicios" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Datos servicios:</h6>
-                    <a class="collapse-item" href="buttons.html">Servicio</a>
-                    <a class="collapse-item" href="cards.html">Habilitación servicio</a>
+                    <a class="collapse-item" href="{% url 'servicios:servicio_list' %}">Servicio</a>
+                    <a class="collapse-item" href="{% url 'servicios:habilitacion_servicio_list' %}">Programar servicio</a>
                 </div>
             </div>
         </li>

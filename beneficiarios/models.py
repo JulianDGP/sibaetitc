@@ -107,7 +107,7 @@ class Beneficiario( Modelo ):
 
     id_rfid_beneficiario = models.CharField(
         max_length=45,
-        help_text='Id RFID carné o llavero',
+        help_text='Id RFID carné o llavero    ',
         unique=True,
         verbose_name='Id RFID'
     )
@@ -149,25 +149,25 @@ class Beneficiario( Modelo ):
 
     nombres_beneficiario = models.CharField(
         max_length=45,
-        help_text='Nombres del beneficiario',
+        #help_text='Nombres del beneficiario',
         verbose_name='Nombres'
     )
 
     apellidos_beneficiario = models.CharField(
         max_length=45,
-        help_text='Apellidos del beneficiario',
+        #help_text='Apellidos del beneficiario',
         verbose_name='Apellidos'
     )
 
     email_beneficiario = models.EmailField(
         max_length=70,
-        help_text='Correo electrónico del beneficiario',
+        #help_text='Correo electrónico del beneficiario',
         verbose_name='Correo electrónico',
         unique=True
     )
 
     fecha_nacimiento_beneficiario = models.DateField(
-        help_text='Fecha de nacimiento del beneficiario en el formato <em>AAAA-MM-DD</em>',
+        help_text='<em>AAAA-MM-DD</em>',
         verbose_name='Fecha de nacimiento'
     )
 
