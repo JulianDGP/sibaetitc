@@ -30,3 +30,32 @@ class DocumentoForm(forms.ModelForm):
             self.fields[field].widget.attrs.update({
                 'class':'form-control'
             })
+
+class Tipo_beneficiarioForm(forms.ModelForm):
+    class Meta:
+        model=Tipo_beneficiario
+        fields = ['nombre_tipo_beneficiario','estado']
+        labels = {'nombre_tipo_beneficiario':"Nombre del tipo de beneficiario","estado":"Estado"}
+        widget={'nombre_tipo_beneficiario': forms.TextInput}
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args,**kwargs)
+        for field in iter(self.fields):
+            self.fields[field].widget.attrs.update({
+                'class':'form-control'
+            })
+
+
+class DependenciaForm(forms.ModelForm):
+    class Meta:
+        model=Dependencia
+        fields = ['nombre_dependencia','estado']
+        labels = {'nombre_dependencia':"Nombre de la dependencia","estado":"Estado"}
+        widget={'nombre_dependencia': forms.TextInput}
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args,**kwargs)
+        for field in iter(self.fields):
+            self.fields[field].widget.attrs.update({
+                'class':'form-control'
+            })

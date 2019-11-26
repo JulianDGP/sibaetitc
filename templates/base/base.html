@@ -78,8 +78,8 @@
                         <h6 class="collapse-header">Datos Beneficiario:</h6>
                         <a class="collapse-item" href="{% url 'beneficiarios:genero_list' %}">Género</a>
                         <a class="collapse-item" href="{% url 'beneficiarios:documento_list' %}">Documento</a>
-                        <a class="collapse-item" href="admin/beneficiarios/tipo_beneficiario">Tipo beneficiario</a>
-                        <a class="collapse-item" href="admin/beneficiarios/dependencia">Dependencia</a>
+                        <a class="collapse-item" href="{% url 'beneficiarios:tipo_beneficiario_list' %}">Tipo beneficiario</a>
+                        <a class="collapse-item" href="{% url 'beneficiarios:dependencia_list'%}">Dependencia</a>
                         <a class="collapse-item" href="admin/beneficiarios/beneficiario">Beneficiario</a>
                     </div>
                 </div>
