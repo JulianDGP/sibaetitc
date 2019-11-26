@@ -1,0 +1,102 @@
+{% extends 'base/base.html' %}
+
+{% block page_content %}
+<form method="POST" class="form-inline">
+    {% csrf_token %}
+    <div class="col-xl-6 col-md-6 mb-6">
+        {% if obj %}
+        <div class="card border-left-warning shadow h-100 py-2">
+            {% else %}
+            <div class="card border-left-success shadow h-100 py-2">
+                {% endif %}
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                {% if obj %} Editar {% else %} Nuevo {% endif %} beneficiario
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <div class="row">
+                                <div class="col-10">
+                                    <div class="input-group">
+                                        <p>RFID:</p>{{form.id_rfid_beneficiario}}
+                                    </div>
+                                </div>
+                                <div class="col-10">
+                                    <div class="input-group">
+                                        <p>Documento:</p>{{form.documento_identidad}}
+                                    </div>
+                                </div>
+                                <div class="col-10">
+                                    <div class="input-group">
+                                        <p>Número de documento:</p>{{form.numero_documento_identidad_beneficiario}}
+                                    </div>
+                                </div>
+                                <div class="col-10">
+                                    <div class="input-group">
+                                        <p>Género:</p>{{form.genero_beneficiario}}
+                                    </div>
+                                </div>
+                                <div class="col-10">
+                                    <div class="input-group">
+                                        <p>Dependencia:</p>{{form.dependencia_beneficiario}}
+                                    </div>
+                                </div>
+                                <div class="col-10">
+                                    <div class="input-group">
+                                        <p>Tipo de beneficiario:</p>{{form.tipo_beneficiario}}
+                                    </div>
+                                </div>
+                                <div class="col-10">
+                                    <div class="input-group">
+                                        <p>Nombres:</p>{{form.nombres_beneficiario}}
+                                    </div>
+                                </div>
+                                <div class="col-10">
+                                    <div class="input-group">
+                                        <p>Apellidos:</p>{{form.apellidos_beneficiario}}
+                                    </div>
+                                </div>
+                                <div class="col-10">
+                                    <div class="input-group">
+                                        <p>E-mail:</p>{{form.email_beneficiario}}
+                                    </div>
+                                </div>
+                                <div class="col-10">
+                                    <div class="input-group">
+                                        <p>Fecha de nacimiento:</p>{{form.fecha_nacimiento_beneficiario}}
+                                    </div>
+                                </div>
+                                <div class="col-10">
+                                    <div class="input-group">
+                                        <p>Foto:</p>{{form.foto_beneficiario}}
+                                    </div>
+                                </div>
+                                <div class="col-10">
+                                    <div class="input-group">
+                                        <p>Estado:</p>{{form.estado}}
+                                    </div>
+                                </div>
+
+                                <!-- {{ form.as_p }} -->
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <div class="row">
+                                <div class="col">
+                                    <button type="submit" class="btn btn-danger"><span class="fa fa-save"></span>
+                                        Guardar
+                                    </button>
+                                    <a href="{% url 'beneficiarios:beneficiario_list' %}" class="btn btn-success"><span
+                                            class="fa fa-undo"></span>Cancelar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+{% endblock %}
+{% block js_page %}
+{% endblock %}

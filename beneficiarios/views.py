@@ -8,7 +8,7 @@ from django.urls import reverse_lazy
 from .models import *
 from .forms import *
 
-
+########################################################################################################################
 
 class GeneroView(LoginRequiredMixin, generic.ListView):
     model = Genero
@@ -46,6 +46,8 @@ class GeneroDel(LoginRequiredMixin, generic.DeleteView):
     context_object_name = 'obj'
     success_url = reverse_lazy('beneficiarios:genero_list')
 
+########################################################################################################################
+
 class Documento_identidadView(LoginRequiredMixin, generic.ListView):
     model = Documento_identidad
     template_name = 'beneficiarios/documento_list.html'
@@ -69,7 +71,7 @@ class Documento_identidadEdit(LoginRequiredMixin, generic.UpdateView):
     template_name = 'beneficiarios/documento_form.html'
     context_object_name = 'obj'
     form_class = DocumentoForm
-    success_url = reverse_lazy('beneficiarios:tipo_beneficiario_list')
+    success_url = reverse_lazy('beneficiarios:documento_list')
     login_url = 'generales:login'
 
     def form_valid(self, form):
@@ -83,6 +85,8 @@ class Documento_identidadDel(LoginRequiredMixin, generic.DeleteView):
     success_url = reverse_lazy('beneficiarios:tipo_beneficiario_list')
 
 
+
+########################################################################################################################
 
 class Tipo_beneficiarioView(LoginRequiredMixin, generic.ListView):
     model = Tipo_beneficiario
@@ -120,7 +124,8 @@ class Tipo_beneficiarioDel(LoginRequiredMixin, generic.DeleteView):
     context_object_name = 'obj'
     success_url = reverse_lazy('beneficiarios:tipo_beneficiario_list')
 
-'''View Dependencia'''
+
+########################################################################################################################
 
 
 class DependenciaView(LoginRequiredMixin, generic.ListView):
@@ -158,3 +163,45 @@ class DependenciaDel(LoginRequiredMixin, generic.DeleteView):
     template_name = 'beneficiarios/dependencia_del.html'
     context_object_name = 'obj'
     success_url = reverse_lazy('beneficiarios:dependencia_list')
+
+
+
+
+########################################################################################################################
+
+
+class BeneficiarioView(LoginRequiredMixin, generic.ListView):
+    model = Beneficiario
+    template_name = 'beneficiarios/beneficiario_list.html'
+    context_object_name = 'obj'
+    login_url = 'generales:login'
+
+class BeneficiarioNew(LoginRequiredMixin, generic.CreateView):
+    model = Beneficiario
+    template_name = 'beneficiarios/beneficiario_form.html'
+    context_object_name = 'obj'
+    form_class = BeneficiarioForm
+    success_url = reverse_lazy('beneficiarios:beneficiario_list')
+    login_url = 'generales:login'
+
+    def form_valid(self, form):
+        form.instance.uc = self.request.user
+        return super().form_valid(form)
+
+class BeneficiarioEdit(LoginRequiredMixin, generic.UpdateView):
+    model = Beneficiario
+    template_name = 'beneficiarios/beneficiario_form.html'
+    context_object_name = 'obj'
+    form_class = BeneficiarioForm
+    success_url = reverse_lazy('beneficiarios:beneficiario_list')
+    login_url = 'generales:login'
+
+    def form_valid(self, form):
+        form.instance.um = self.request.user.id
+        return super().form_valid(form)
+
+class BeneficiarioDel(LoginRequiredMixin, generic.DeleteView):
+    model = Beneficiario
+    template_name = 'beneficiarios/beneficiario_del.html'
+    context_object_name = 'obj'
+    success_url = reverse_lazy('beneficiarios:beneficiario_list')

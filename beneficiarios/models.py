@@ -3,7 +3,8 @@ import os
 # Create your models here.
 from generales.models import Modelo
 
-class Genero(Modelo):
+
+class Genero( Modelo ):
     id_genero = models.AutoField(
         primary_key=True
     )
@@ -16,17 +17,18 @@ class Genero(Modelo):
     )
 
     def __str__(self):
-        return '{}'.format(self.nombre_genero)
+        return '{}'.format( self.nombre_genero )
 
     def save(self):
         self.nombre_genero = self.nombre_genero.upper()
-        super(Genero, self).save()
+        super( Genero, self ).save()
 
     class Meta:
         verbose_name = 'Género'
         verbose_name_plural = 'Géneros'
 
-class Documento_identidad(Modelo):
+
+class Documento_identidad( Modelo ):
     id_documento_identidad = models.AutoField(
         primary_key=True
     )
@@ -39,8 +41,8 @@ class Documento_identidad(Modelo):
     )
 
     def save(self):
-        self.nombre_documento_identidad=self.nombre_documento_identidad.upper()
-        super(Documento_identidad, self).save()
+        self.nombre_documento_identidad = self.nombre_documento_identidad.upper()
+        super( Documento_identidad, self ).save()
 
     def __str__(self):
         return self.nombre_documento_identidad
@@ -49,7 +51,8 @@ class Documento_identidad(Modelo):
         verbose_name = 'Documento de identidad'
         verbose_name_plural = 'Documentos de identidad'
 
-class Tipo_beneficiario(Modelo):
+
+class Tipo_beneficiario( Modelo ):
     id_tipo_beneficiario = models.AutoField(
         primary_key=True
     )
@@ -63,16 +66,17 @@ class Tipo_beneficiario(Modelo):
 
     def save(self):
         self.nombre_tipo_beneficiario = self.nombre_tipo_beneficiario.upper()
-        super(Tipo_beneficiario, self).save()
+        super( Tipo_beneficiario, self ).save()
 
     def __str__(self):
         return self.nombre_tipo_beneficiario
 
     class Meta:
-        verbose_name='Tipo de beneficiario'
-        verbose_name_plural='Tipos de beneficiarios'
+        verbose_name = 'Tipo de beneficiario'
+        verbose_name_plural = 'Tipos de beneficiarios'
 
-class Dependencia(Modelo):
+
+class Dependencia( Modelo ):
     id_dependencia = models.AutoField(
         primary_key=True
     )
@@ -86,7 +90,7 @@ class Dependencia(Modelo):
 
     def save(self):
         self.nombre_dependencia = self.nombre_dependencia.upper()
-        super(Dependencia, self).save()
+        super( Dependencia, self ).save()
 
     def __str__(self):
         return self.nombre_dependencia
@@ -95,7 +99,8 @@ class Dependencia(Modelo):
         verbose_name = 'Dependencia'
         verbose_name_plural = 'Dependencias'
 
-class Beneficiario(Modelo):
+
+class Beneficiario( Modelo ):
     id_beneficiario = models.AutoField(
         primary_key=True
     )
@@ -162,7 +167,7 @@ class Beneficiario(Modelo):
     )
 
     fecha_nacimiento_beneficiario = models.DateField(
-        help_text = 'Fecha de nacimiento del beneficiario en el formato <em>AAAA-MM-DD</em>',
+        help_text='Fecha de nacimiento del beneficiario en el formato <em>AAAA-MM-DD</em>',
         verbose_name='Fecha de nacimiento'
     )
 
@@ -173,18 +178,18 @@ class Beneficiario(Modelo):
     )
 
     foto_beneficiario = models.ImageField(
-        upload_to = 'beneficiarios'
+        upload_to='beneficiarios'
     )
 
     def save(self):
         self.id_rfid_beneficiario = self.id_rfid_beneficiario.upper()
         self.nombres_beneficiario = self.nombres_beneficiario.upper()
         self.apellidos_beneficiario = self.apellidos_beneficiario.upper()
-        self.foto_beneficiario.name = '{}_{}.jpg'.format(self.id_beneficiario,self.modificado)
-        super(Beneficiario, self).save()
+        self.foto_beneficiario.name = '{}_{}.jpg'.format( self.id_beneficiario, self.modificado )
+        super( Beneficiario, self ).save()
 
     def __str__(self):
-        return '{} {}'.format(self.apellidos_beneficiario, self.nombres_beneficiario)
+        return '{} {}'.format( self.apellidos_beneficiario, self.nombres_beneficiario )
 
     class Meta:
         verbose_name = 'Beneficiario'

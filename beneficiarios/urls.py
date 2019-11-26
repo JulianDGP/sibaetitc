@@ -21,4 +21,9 @@ urlpatterns = [
     path('dependencias/new/', DependenciaNew.as_view(), name='dependencia_new'),
     path('dependencias/edit/<int:pk>', DependenciaEdit.as_view(), name='dependencia_edit'),
     path('dependencias/delete/<int:pk>', DependenciaDel.as_view(), name='dependencia_del'),
+
+    path('beneficiarios/', BeneficiarioView.as_view(), name='beneficiario_list'),
+    path('beneficiarios/new/', BeneficiarioNew.as_view(), name='beneficiario_new'),
+    path('beneficiarios/edit/<int:pk>', BeneficiarioEdit.as_view(), name='beneficiario_edit'),
+    path('beneficiarios/delete/<int:pk>', BeneficiarioDel.as_view(), name='beneficiario_del'),
 ]
