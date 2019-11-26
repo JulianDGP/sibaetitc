@@ -5,6 +5,7 @@ from .models import *
 from django.contrib.auth.models import User
 
 
+########################################################################################################################
 class GeneroForm( forms.ModelForm ):
     class Meta:
         model = Genero
@@ -64,6 +65,7 @@ class DependenciaForm( forms.ModelForm ):
                 'class': 'form-control'
             } )
 
+########################################################################################################################
 
 class BeneficiarioForm( forms.ModelForm ):
     documento_identidad = forms.ModelChoiceField(

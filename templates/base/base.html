@@ -104,16 +104,16 @@
 
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseInscipciones"
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseInscripciones"
                aria-expanded="true" aria-controls="collapseInscipciones">
                 <i class="fas fa-fw fa-cog"></i>
-                <span>Inscipciones</span>
+                <span>Inscripciones</span>
             </a>
             <div id="collapseInscipciones" class="collapse" aria-labelledby="headingTwo"
                  data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Datos servicios:</h6>
-                    <a class="collapse-item" href="buttons.html">Inscipcion Servicios</a>
+                    <a class="collapse-item" href="{% url 'inscripciones:inscripcion_list' %}">Inscipcion a servicios</a>
                     <a class="collapse-item" href="cards.html">Tipo de afiliación</a>
                 </div>
             </div>

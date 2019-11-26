@@ -4,6 +4,7 @@ import os
 from generales.models import Modelo
 
 
+########################################################################################################################
 class Genero( Modelo ):
     id_genero = models.AutoField(
         primary_key=True
@@ -27,6 +28,7 @@ class Genero( Modelo ):
         verbose_name = 'Género'
         verbose_name_plural = 'Géneros'
 
+########################################################################################################################
 
 class Documento_identidad( Modelo ):
     id_documento_identidad = models.AutoField(
@@ -52,6 +54,7 @@ class Documento_identidad( Modelo ):
         verbose_name_plural = 'Documentos de identidad'
 
 
+########################################################################################################################
 class Tipo_beneficiario( Modelo ):
     id_tipo_beneficiario = models.AutoField(
         primary_key=True
@@ -76,6 +79,7 @@ class Tipo_beneficiario( Modelo ):
         verbose_name_plural = 'Tipos de beneficiarios'
 
 
+########################################################################################################################
 class Dependencia( Modelo ):
     id_dependencia = models.AutoField(
         primary_key=True
@@ -98,7 +102,7 @@ class Dependencia( Modelo ):
     class Meta:
         verbose_name = 'Dependencia'
         verbose_name_plural = 'Dependencias'
-
+########################################################################################################################
 
 class Beneficiario( Modelo ):
     id_beneficiario = models.AutoField(
@@ -185,7 +189,7 @@ class Beneficiario( Modelo ):
         self.id_rfid_beneficiario = self.id_rfid_beneficiario.upper()
         self.nombres_beneficiario = self.nombres_beneficiario.upper()
         self.apellidos_beneficiario = self.apellidos_beneficiario.upper()
-        self.foto_beneficiario.name = '{}_{}.jpg'.format( self.id_beneficiario, self.modificado )
+        self.foto_beneficiario.name = '{}_{}.jpg'.format( self.id_beneficiario, self.fm )
         super( Beneficiario, self ).save()
 
     def __str__(self):
