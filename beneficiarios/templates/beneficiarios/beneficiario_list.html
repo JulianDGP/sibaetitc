@@ -49,13 +49,13 @@
             <tr>
                 <!--<<td>{{ item.id_beneficiario }}</td>
                 <td>{{ item.id_rfid_beneficiario }}</td>-->
-                <td>{{ item.documento_identidad }}</td>
+                <td>{{ item.documento_identidad|title }}</td>
                 <td>{{ item.numero_documento_identidad_beneficiario }}</td>
-                <td>{{ item.genero_beneficiario }}</td>
-                <td>{{ item.dependencia_beneficiario }}</td>
-                <td>{{ item.tipo_beneficiario }}</td>
-                <td>{{ item.nombres_beneficiario }}</td>
-                <td>{{ item.apellidos_beneficiario }}</td>
+                <td>{{ item.genero_beneficiario|title }}</td>
+                <td>{{ item.dependencia_beneficiario|title }}</td>
+                <td>{{ item.tipo_beneficiario|title }}</td>
+                <td>{{ item.nombres_beneficiario|title }}</td>
+                <td>{{ item.apellidos_beneficiario|title }}</td>
                 <td>{{ item.email_beneficiario }}</td>
                 <td>{{ item.fecha_nacimiento_beneficiario }}</td>
                 <td>{{ item.saldo_beneficiario }}</td>

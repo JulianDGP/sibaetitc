@@ -46,7 +46,7 @@
             <tbody>
             {% for item in obj %}
             <tr>
-                <td>{{ item.nombre_servicio }}</td>
+                <td>{{ item.nombre_servicio|title }}</td>
                 <td>{{ item.hora_inicio_servicio|time:'' }}</td>
                 <td>{{ item.hora_fin_servicio|time:'' }}</td>
                 <td>$ {{ item.valor_servicio }}</td>

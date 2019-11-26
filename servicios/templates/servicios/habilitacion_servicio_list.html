@@ -35,9 +35,9 @@
             <tbody>
             {% for item in obj %}
             <tr>
-                <td>{{ item.servicio_habilitacion_servicio }}</td>
-                <td>{{ item.fecha_habilitacion_servicio}}</td>
-                <td>{{ item.estado|yesno:"Activo,Inactivo" }}</td>
+                <td>{{ item.servicio_habilitacion_servicio|title }}</td>
+                <td>{{ item.fecha_habilitacion_servicio|date:'d-m-Y'}}</td>
+                <td>{{ item.estado|yesno:"Activo,Cancelado" }}</td>
                 <td>
                     <a href="{% url 'servicios:habilitacion_servicio_edit' item.id_habilitacion_servicio %}" class="btn btn-warning btn-circle"
                        role="button"><i class="far fa-edit"></i></a>

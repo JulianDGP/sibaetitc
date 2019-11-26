@@ -104,7 +104,8 @@ class Habilitacion_servicio( Modelo ):
 
     habilitado_habilitacion_servicio = models.BooleanField(
         help_text='Activo si se presta el servicio',
-        verbose_name='Estado'
+        verbose_name='Estado',
+        null=True
     )
 
     def __str__(self):

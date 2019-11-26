@@ -83,7 +83,6 @@ class BeneficiarioForm( forms.ModelForm ):
             .order_by( 'nombre_tipo_beneficiario' )
     )
 
-
     class Meta:
         model = Beneficiario
         fields = ['id_rfid_beneficiario', 'documento_identidad', 'numero_documento_identidad_beneficiario',
@@ -96,11 +95,12 @@ class BeneficiarioForm( forms.ModelForm ):
                   'tipo_beneficiario': 'Tipo', 'nombres_beneficiario': 'Nombres',
                   'apellidos_beneficiario': 'Apellidos', 'email_beneficiario': 'E-mail',
                   'fecha_nacimiento_beneficiario': 'Fecha Nacimiento', 'foto_beneficiario': 'Foto', 'estado': 'Estado'}
-        widget = {'id_rfid_beneficiario':forms.TextInput,
+        widget = {'id_rfid_beneficiario': forms.TextInput,
                   'numero_documento_identidad_beneficiario': 'Num. Doc',
-                  'nombres_beneficiario':forms.TextInput,
-                  'apellidos_beneficiario':forms.TextInput, 'email_beneficiario':forms.EmailInput,
-                  'fecha_nacimiento_beneficiario':forms.TextInput, 'fecha_nacimiento_beneficiario':forms.DateField, 'estado':forms.TextInput}
+                  'nombres_beneficiario': forms.TextInput,
+                  'apellidos_beneficiario': forms.TextInput, 'email_beneficiario': forms.EmailInput,
+                  'fecha_nacimiento_beneficiario': forms.TextInput, 'fecha_nacimiento_beneficiario': forms.DateField,
+                  'estado': forms.TextInput}
 
     def __init__(self, *args, **kwargs):
         super().__init__( *args, **kwargs )

@@ -38,7 +38,7 @@
             {% for item in obj %}
             <tr>
                 <td>{{ item.id_genero}}</td>
-                <td>{{ item.nombre_genero }}</td>
+                <td>{{ item.nombre_genero|title }}</td>
                 <td>{{ item.estado|yesno:"Activo,Inactivo" }}</td>
                 <td>{{ item.fc|date:"d/m/Y H:i:s" }}</td>
                 <td>{{ item.fm|date:"d/m/Y H:i:s" }}</td>
